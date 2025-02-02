@@ -32,8 +32,8 @@ public class JSONFileProcessor implements FileProcessor{
      */
     @Override
     public void write(String filePath, Map<String, Object> data) throws IOException {
-        String jsonString = objectMapper.writeValueAsString(data);
-        FileHandler.writeDataToFilePath(filePath, jsonString);
+        //String jsonString = objectMapper.writeValueAsString(data);
+        FileHandler.writeDataToFilePath(filePath, "jsonString");
     }
 
 
