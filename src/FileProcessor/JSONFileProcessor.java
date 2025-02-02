@@ -1,7 +1,8 @@
 package FileProcessor;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.Map;
 
 public class JSONFileProcessor implements FileProcessor{
 
@@ -12,7 +13,9 @@ public class JSONFileProcessor implements FileProcessor{
      * @return An Array with the values of the
      */
     @Override
-    public ArrayList<Object> read(String filePath) {
+    public Map<String, Object> read(String filePath) throws IOException, InvalidFileContent {
+        String RawData = FileHandler.filePathToString(filePath);
+        
         return null;
     }
 
@@ -23,9 +26,10 @@ public class JSONFileProcessor implements FileProcessor{
      * @param data     What is contained in the data
      */
     @Override
-    public void write(String filePath, Arrays data) {
+    public void write(String filePath, Map<String, Object> data) throws IOException {
 
     }
+
 
 
 }
