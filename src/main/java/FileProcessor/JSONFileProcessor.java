@@ -14,7 +14,7 @@ public class JSONFileProcessor implements FileProcessor{
      */
     @Override
     public Map<String, Object> read(String filePath) throws IOException, InvalidFileContent {
-        String RawData = FileHandler.filePathToString(filePath);
+        String rawData = FileHandler.filePathToString(filePath);
 
         /***ObjectMapper objectMapper = new ObjectMapper();
         try {

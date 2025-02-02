@@ -1,6 +1,8 @@
 package FileProcessor;
 
-import java.io.IOException;
+
+import javax.xml.transform.*;
+import java.io.*;
 import java.util.Map;
 
 public class XMLFileProcessor implements FileProcessor{
@@ -13,7 +15,10 @@ public class XMLFileProcessor implements FileProcessor{
      */
     @Override
     public Map<String, Object> read(String filePath) throws IOException, InvalidFileContent {
-        return Map.of();
+        String rawData = FileHandler.filePathToString(filePath);
+        XmlMapper xmlMapper = new XmlMapper();
+        Map<String, Object> map= xmlMapper.readValue(rawData, Map.class);
+
     }
 
     /**
@@ -24,6 +29,7 @@ public class XMLFileProcessor implements FileProcessor{
      */
     @Override
     public void write(String filePath, Map<String, Object> data) throws IOException {
+        FileHandler.writeDataToFilePath(filePath, "xmlstring");
 
     }
 }
