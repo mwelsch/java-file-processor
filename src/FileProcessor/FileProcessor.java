@@ -10,5 +10,5 @@ public interface FileProcessor {
      * @return An Array with the values of the
      */
     default ArrayList read(String filePath){return null;}
-    default Arrays write(String filePath){return null;}
+    default ArrayList write(String filePath){return null;}
 }
